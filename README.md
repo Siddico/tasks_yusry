@@ -1,83 +1,90 @@
-# Static Data Showcase
+# Premium Mobile UI Showcase
 
-A simple Flutter mobile application that displays a small hardcoded list of local data on a single screen. The app is fully offline, uses Material Design, and focuses on clean structure, maintainability, and a polished visual presentation.
+A simple, highly polished Flutter mobile application designed with a professional, clean, and creative user interface. The app implements a standard mobile navigation flow with two main screens: a **Main Screen** (with a list of items) and a **Detail Screen** (displaying details for the selected item), preceded by an engaging **Splash Screen**.
 
-## Project Overview
+---
 
-This project was built for a basic data display task where the app retrieves 5 predefined items from a local source and renders them in a modern list layout. It uses Flutter best practices with a clear folder structure, reusable widgets, and a professional UI that feels lightweight but refined.
+## 📱 Project Overview
 
-## Features
+The goal of this project is to showcase a modern, high-fidelity mobile user interface layout. The application is completely offline, lightweight, and built with Material Design 3. It utilizes a static data model to focus strictly on visual layout, smooth transitions, and premium UX aesthetics.
 
-- Single-screen Flutter app
-- Hardcoded local data only
-- `ListView.builder` for efficient rendering
-- Material Design UI with a modern color palette
-- AppBar with application title
-- Each item includes a title, description, and icon
-- No API calls, database, Firebase, forms, or authentication
-- Clean and reusable code structure
+### Key Requirements Addressed:
+1. **Main Screen**: Displays a curated list of featured items with custom cards.
+2. **Navigation**: Seamless transition from the Main Screen to the Detail Screen upon selecting an item.
+3. **Detail Screen**: Displays rich, basic information about the selected item.
+4. **Offline-First & Visual Focus**: No complex backend or external API dependency, making the interface reliable and fast.
+5. **Polished Experience**: Includes a Splash Screen, responsive list layouts, Hero animations, and custom page transitions.
 
-## Project Structure
+---
+
+## ✨ Features & Applied Enhancements
+
+- **Brand New Splash Screen (`lib/screens/splash_screen.dart`)**:
+  - Interactive, modern gradient background.
+  - Scale animations on the app logo/icon and title.
+  - Automated transition to the Main Screen using a custom slide and fade route transition.
+- **Interactive Main Screen (`lib/screens/home_screen.dart`)**:
+  - Premium header card featuring styled category tags (`Material 3`, `Hero Animation`, `Responsive UI`).
+  - Interactive scrollable list using `CustomScrollView` and sliver widgets for native bouncing scrolling.
+  - Dynamically displays list items mapped from a local data store.
+  - Dynamic empty state layout helper built in.
+- **Dynamic Detail Screen (`lib/screens/details_screen.dart`)**:
+  - Displays a large header featuring the selected item's icon, title, and short description mapped on a matching vibrant gradient background.
+  - Clean card structure grouping the detailed description and metadata table (Category, Highlight, Design Style).
+  - Back-navigation via the app bar and a dedicated "Back to Home" button.
+- **Hero & Custom Transitions**:
+  - Smooth `Hero` animations matching the icon from the list item card directly to the detail header.
+  - Custom page slide/fade route transitions.
+- **Material 3 Theme System (`lib/core/theme.dart`)**:
+  - Custom color palette built using a Slate and primary blue color scheme.
+  - Modern typography hierarchy and customized cards, shapes, and scaffold background styles.
+
+---
+
+## 📂 Project Structure
 
 ```text
 lib/
-	main.dart
-	data/
-		local_items.dart
-	models/
-		local_item.dart
-	screens/
-		home_screen.dart
-	widgets/
-		item_card.dart
-test/
-	widget_test.dart
+├── core/
+│   └── theme.dart          # App design tokens, styles, and typography
+├── data/
+│   └── sample_data.dart    # Hardcoded local data items list
+├── models/
+│   └── item_model.dart     # Immutable item model definition
+├── screens/
+│   ├── splash_screen.dart  # Opening screen with loading indicator and scale animations
+│   ├── home_screen.dart    # Main screen showing header card and interactive items list
+│   └── details_screen.dart # Detail screen displaying rich info about selected items
+├── widgets/
+│   └── item_card.dart      # Reusable styled item card widget with Hero animations
+└── main.dart               # Entry point of the application
 ```
 
-## File Guide
+---
 
-### `lib/main.dart`
-App entry point. Sets up the Material 3 theme, app colors, and starts the home screen.
+## 🛠️ File & Code Reference Guide
 
-### `lib/models/local_item.dart`
-Defines the immutable model used for each static list item.
+- **[lib/main.dart](file:///d:/Flutter%20Projects/yusry/lib/main.dart)**: Boots the app, registers the theme system, and launches the splash screen.
+- **[lib/core/theme.dart](file:///d:/Flutter%20Projects/yusry/lib/core/theme.dart)**: Contains the light mode `ThemeData` setup with customized font styles, colors, and global widget styles.
+- **[lib/models/item_model.dart](file:///d:/Flutter%20Projects/yusry/lib/models/item_model.dart)**: Defines the structured `ItemModel` representing each item (including `id`, `title`, `shortDescription`, `description`, `icon`, `accentColor`, `category`, and `highlight`).
+- **[lib/data/sample_data.dart](file:///d:/Flutter%20Projects/yusry/lib/data/sample_data.dart)**: Contains 5 pre-configured high-quality items representing common tasks in project lifecycles (Strategy, UI/UX, Build, Testing, Delivery).
+- **[lib/screens/splash_screen.dart](file:///d:/Flutter%20Projects/yusry/lib/screens/splash_screen.dart)**: A visual loading screen that transitions smoothly to the home page.
+- **[lib/screens/home_screen.dart](file:///d:/Flutter%20Projects/yusry/lib/screens/home_screen.dart)**: The main hub screen showing the header banner and items list.
+- **[lib/screens/details_screen.dart](file:///d:/Flutter%20Projects/yusry/lib/screens/details_screen.dart)**: Shows deep-dive details, descriptions, and highlights of a selected list item.
+- **[lib/widgets/item_card.dart](file:///d:/Flutter%20Projects/yusry/lib/widgets/item_card.dart)**: The component that renders an item block on the list, complete with ripple effects, rounded borders, custom colored icon boxes, and arrow indicators.
 
-### `lib/data/local_items.dart`
-Contains the hardcoded list of 5 local items shown on the screen.
+---
 
-### `lib/screens/home_screen.dart`
-Builds the single-screen layout, hero section, and `ListView.builder` list.
+## 🚀 How to Run the App
 
-### `lib/widgets/item_card.dart`
-Reusable card widget used to display each item with icon, title, and description.
-
-### `test/widget_test.dart`
-Basic widget test to verify the app renders and the static content is available.
-
-## Design Notes
-
-- The app uses a modern blue, teal, and warm accent palette.
-- A gradient hero section adds a more creative and premium feel.
-- Item cards use subtle shadows, rounded corners, and accent indicators for a polished look.
-- The layout is intentionally simple and focused so the content remains the priority.
-
-## Proposal
-
-I understand you need a simple Flutter mobile app that displays a small hardcoded list of static local data on one clean screen. I will build it with Flutter using clean, maintainable code, a modern Material Design UI, and a professional structure that is easy to review and submit. The app will be lightweight, fully offline, and delivered quickly without unnecessary complexity. I’ll focus on quality, readability, and a polished user experience so the final result is client-ready. Let’s discuss the details and I’ll get started.
-
-## Summary
-
-This project is a simple Flutter mobile application that shows static local data from a hardcoded list on a single screen. It includes a modern AppBar, a hero section, reusable item cards, and a `ListView.builder` for clean rendering of all 5 items. Each item includes a title, description, and icon, and the app works fully offline with no API, database, Firebase, forms, or authentication.
-
-## How to Run
-
-1. Install Flutter if it is not already available.
-2. Open the project in VS Code or Android Studio.
-3. Run `flutter pub get`.
-4. Start the app with `flutter run`.
-
-## Notes for Client Delivery
-
-- The project is ready to submit as a lightweight offline Flutter app.
-- The code is organized for easy review and future maintenance.
-- The UI is intentionally modern and suitable for a simple freelance delivery.
+1. **Prerequisites**: Make sure Flutter SDK is installed and set up in your environment path.
+2. **Get Dependencies**: Run `flutter pub get` from the project root directory.
+3. **Select a Target/Device**:
+   - Run on Chrome or Edge browser (web-app):
+     ```bash
+     flutter run -d chrome
+     ```
+   - Run on a connected emulator or physical mobile device:
+     ```bash
+     flutter run
+     ```
