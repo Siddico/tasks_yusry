@@ -14,7 +14,7 @@ class BasicNavigationApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Basic Navigation App',
+      title: 'Siddiq E-Commerce App',
       theme: buildAppTheme(),
       home: const SplashScreen(),
     );

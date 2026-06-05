@@ -64,11 +64,12 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF0F172A), Color(0xFF155EEF), Color(0xFF0F766E)],
+            colors: [Color(0xFF0F172A), Color(0xFFFF6B00)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -95,22 +96,24 @@ class _SplashScreenState extends State<SplashScreen>
                     ),
                   ),
                   child: const Icon(
-                    Icons.layers_rounded,
+                    Icons.shopping_bag_rounded,
                     color: Colors.white,
                     size: 54,
                   ),
                 ),
                 const SizedBox(height: 18),
                 Text(
-                  'Basic Navigation App',
+                  'Siddiq SHOP',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: Colors.white,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 26,
+                    letterSpacing: 1.5,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Preparing a premium mobile experience...',
+                  'Preparing a premium shopping experience...',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Colors.white.withValues(alpha: 0.84),
                   ),
@@ -122,8 +125,8 @@ class _SplashScreenState extends State<SplashScreen>
                     minHeight: 6,
                     borderRadius: BorderRadius.circular(999),
                     backgroundColor: Colors.white.withValues(alpha: 0.14),
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      Colors.white,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      theme.colorScheme.primary,
                     ),
                   ),
                 ),
